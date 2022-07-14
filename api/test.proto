@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "github.com/chromato99/gRPC-test/api";
+
+service RandomNumber {
+  // Send max number and response random number smaller than max number
+  rpc GetRandomNumber (RandomNumberRequest) returns (RandomNumberReply) {}
+}
+
+// The request random number smaller than maxNumber
+message RandomNumberRequest {
+  int64 maxNumber = 1;
+}
+
+// The response random number
+message RandomNumberReply {
+  int64 number = 1;
+}
